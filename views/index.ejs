@@ -1,0 +1,375 @@
+<%- include('part/header.ejs') %>
+<%- include('part/down.ejs') %>
+<html>
+<body onkeydown="false" class="p-0 m-0  box-border bg-black text-white">
+    <%- include('part/loading.ejs') %> 
+<div class="px-48 pt-20 bodypx">
+    <audio style="display: none;" id="music" loop>
+        <source src="./imgs/reflections.mp3" type="audio/mpeg">
+    </audio>
+    <nav class="linearbg info rounded py-2">
+        <div class="pl-5"><i class="fas fa-cubes text-white text-xl pr-5"></i> <span class="font-medium -mt-2">SEN DE HAYALLERİNDEKİ TASARIMA SAHİP OL!</span></div>
+        <div class="float-right -mt-6  info-buton"><a href="https://discord.com/users/680405276221898763" target="_blank" class="font-medium hover:bg-blue-500 bg-blue-600 info-buton py-2 px-7 rounded">TIKLA</a></div>
+        </nav>
+    <div class=" mt-12 flex items-center justify-between border-b-2 pb-2 border-gray-500 border-opacity-20 px-2">
+        <div class="">
+            <h1 class="font-semibold text-2xl">SyneS
+                <% if (status == "dnd") { %>
+                    <span class="text-red-400 relative active text-sm font-normal" style="top: -0.4vh;"><ion-icon name="remove-circle-sharp" class="relative onlinedr" style="top: 0.2vh;"></ion-icon> Dnd on Discord</span>
+                <% } %>   
+                <% if (status == "online") { %>
+                    <span class="text-green-400 relative active text-sm font-normal" style="top: -0.4vh;"><ion-icon name="ellipse" class="relative onlinedr" style="top: 0.2vh;"></ion-icon> Online on Discord</span>
+                <% } %>
+                <% if (status == "idle") { %>
+                    <span class="text-yellow-400 relative active text-sm font-normal" style="top: -0.4vh;"><ion-icon name="moon" class="relative onlinedr" style="top: 0.2vh;"></ion-icon> Idle on Discord</span>
+                <% } %>
+                <% if (status == "offline") { %>
+                    <span class="text-gray-500   relative active text-sm font-normal" style="top: -0.4vh;"><ion-icon name="ellipse-outline" class="relative onlinedr" style="top: 0.2vh;"></ion-icon> Offline on Discord</span>
+                <% } %>  
+            </h1>
+            <h4 class="font-light text-sm text-blue-300" id="synes"></h4>
+        </div>
+
+        <div class="">
+            <a href="https://discord.com/users/842858705468260393" id="discord" class="" target="_blank"><i class="fab fa-discord text-xl text-gray-400 mx-3 hover:text-white "></i></a>
+            <a href="https://www.behance.net/synes" id="behance" class="" target="_blank"><i class="fab fa-behance text-xl text-gray-400 mx-3 hover:text-white "></i></a>
+            <a href="https://www.youtube.com/channel/UCSsN_oN10CYwvAeElXLxrOg" target="_blank" id="youtube" class=""><i class="fab fa-youtube text-xl text-gray-400 mx-3 hover:text-white "></i></a>
+            <a href="https://www.reddit.com/user/Synees" id="reddit" class="" target="_blank"><i class="fab fa-reddit-alien text-xl text-gray-400 mx-3 hover:text-white "></i></a>
+        </div>
+    </div>
+
+    <div class="absolute mt-10">
+        <div class="flex flex-row justify-between items-center w-44 gap-3">
+            <% if (status == "dnd") { %>
+                <div class="">
+                    <img class="rounded-full shadow-xl shadow-red-700" style="--tw-ring-offset-color: #070A10;" width="50" src="<%= avatar %>" alt="">
+                    <div class="absolute pl-8 -mt-4"><ion-icon id="dnd" class="text-base bg-gray-900  text-red-400 rounded-full relative onlinedr" name="remove-circle-sharp"></ion-icon></div>
+                </div>
+            <% } %>
+            <% if (status == "online") { %>
+                <div class="">
+                    <img class="rounded-full shadow-xl" style="--tw-ring-offset-color: #070A10;" width="50" src="<%= avatar %>" alt="">
+                    <div class="absolute pl-8 -mt-4"><ion-icon id="online"  class="text-base bg-gray-900 text-green-400 rounded-full relative onlinedr" name="ellipse"></ion-icon></div>
+                </div>
+            <% } %>
+            <% if (status == "idle") { %>
+                <div class="">
+                    <img class="rounded-full shadow-xl " style="--tw-ring-offset-color: #070A10;" width="50" src="<%= avatar %>" alt="">
+                    <div class="absolute pl-8 -mt-4"><ion-icon id="idle" style=" transform: rotate(-100deg); " class="relative onlinedr text-base bg-gray-900 text-yellow-400 rounded-full" name="moon"></ion-icon></div>
+                </div>
+            <% } %>
+            <% if (status == "offline") { %>
+                <div class="">
+                    <img class="rounded-full shadow-xl " style="--tw-ring-offset-color: #070A10;" width="50" src="<%= avatar %>" alt="">
+                    <div class="absolute pl-8 -mt-4"><ion-icon id="offline" class="text-base bg-gray-900 text-gray-500 rounded-full relative onlinedr" name="ellipse-outline"></ion-icon></div>
+                </div>
+            <% } %>
+            <div class="flex flex-row justify-between items-center">
+                <h1 class="text-xl flex justify-center items-center">SyneS&nbsp;</h1>
+                <span class="text-gray-400 bg-gray-800 px-1 text-sm rounded">#5555</span>
+            </div>
+        </div> 
+    </div>
+
+    <div class="pt-28 pl-1 tech flex flex-row items-center justify-between" id="about">
+        <div class="float-left ">
+            <h1 class="text-4xl tech font-medium aboutname pb-1 pr-2 flex"><p class="text-blue-100">Hi,&nbsp;</p> I'm SyneS</h1>
+            <h4 class=" tech font-light text-gray-400">Hi there, I'm Efe 'SyneS' Avcı. I'm graphic designer & front-end developer. I live in Turkey. I'm high school student and<br> self-improvement person.</h4><br>
+            <h4 class=" tech font-light max-w-lg text-gray-400">Co-Founder <a class="font-medium" href="https://klavyeefendisi.com" target="_blank">@ KlavyeEfendisi.com</a></h4>
+            <h4 class=" tech font-light max-w-lg text-gray-400">Staff <a class="font-medium" href="https://ucuzpin.com" target="_blank">@ UcuzPin.com</a></h4>
+        </div>
+        <div class="float-right -mt-14">
+            <div class="">
+            </div>
+        </div>
+    </div>
+
+    <a href="<%= dclink %>" target="_blank">
+        <div class="mt-28">
+            <div class="flex justify-center"><div class="-mt-5 absolute pl-96"><img src="imgs/effect.svg" class="" alt=""></div></div>
+            <div class="klavyebox infobox bg-gray-900 bg-opacity-60 shadow-xl hover:bg-opacity-60 flex py-5 px-8 rounded-xl">
+                <div class="mr-5 infoimg">
+                    <img src="<%= guilds.iconURL({dynamic:true, size:1024}) %>" class="rounded-xl border border-blue-500 border-opacity-20 p-1" width="100" alt="">
+                </div>
+                <div class="mt-6 infotext">
+                    <h1 class="font-extrabold text-2xl">KLAVYE EFENDİSİ'Nİ ZİYARET ET!</h1>
+                    <h4 class="text-gray-400 font-light">Türkiye'nin en ucuz ve en güvenilir dijital oyun platformu Klavye Efendisi ile alışverişin tadını çıkar!</h4>
+                </div>
+            </div>
+            <div class="flex justify-center"><div class="-mt-9 absolute pr-96"><img style=" transform: rotate(180deg); padding: 0.5vh;" src="imgs/effect.svg" class="" alt=""></div></div>
+        </div>
+    </a>
+
+    <div class="pt-32" id="tech">
+        <h1 class="text-3xl bodytext font-bold">Skills</h1>
+        <h2 class="text-5xl ml-16 absolute -mt-12 z-0 -translate-x-1/2 transform font-bold uppercase text-heading text-white opacity-10">Skills</h2>
+        <h4 class="text-gray-300 font-light text-sm bodytext pt-1">You can learn the materials used <a href="/doc/material" class="text-blue-500">here</a>!</h4>
+        <div class="flex pt-3 techbox flex-wrap flex justify-center">
+            <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded">
+                <img src="./imgs/html.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">HTML</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded">
+                <img src="./imgs/css.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">CSS</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded">
+                <img src="./imgs/git.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">GİT</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded">
+                <img src="./imgs/javascript.svg" width="22" class="rounded float-left mr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">JAVASCRİPT</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded">
+                <img src="./imgs/sass.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">SASS</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/tailwindcss.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">TAİLWİNDCSS</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/bootstrap.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">BOOTSTRAP</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/nodejs.svg" width="28" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">NODE.JS</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/Octocat.png" width="35"  class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">GİTHUB</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/512px-Repl.it_logo.svg.png" width="34" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">REPL.İT</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/photoshop.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">PHOTOSHOP</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/font-awesome-seeklogo.com.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">F. AWESOME</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/ionicframework-icon.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">İONİC</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/heroku.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">HEROKU</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/iconscout.png" width="31" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">İCONSCOUT</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/lottie.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">LOTTİE</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="./imgs/google-fonts.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">GOOGLE FONTS</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="boxbg flex items-center justify-between px-3 h-10 w-44 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-80 font-medium rounded shadow-xl">
+                <img src="https://www.saashub.com/images/app/service_logos/155/7902ojac7nj3/large.png?1635277061" width="22" class="rounded float-left" alt="">
+                <span class="float-right font-medium techtext">HEROİCONS</span>
+            </h3>
+        </div>
+        </div>
+    </div>
+
+    <div class="pt-32" id="tech">
+        <h1 class="text-3xl bodytext font-bold">Works</h1>
+        <h2 class="text-5xl -ml-4 absolute -mt-12 z-0 transform font-bold uppercase text-heading text-white opacity-10">Works</h2>
+        <h4 class="text-gray-300 font-light text-sm bodytext pt-1">You can see my Behance portfolio <a href="https://www.behance.net/synes" class="text-blue-500">here</a>!</h4>
+        <div class="flex pt-3 techbox flex-wrap gap-3 flex justify-center">
+            <div class=" dark:bg-black flex flex-wrap">
+                <div class="bg-gray-900 bg-opacity-20 p-4 rounded-xl max-w-md border border-opacity-10">
+                  <div class="flex justify-between">
+                    <div class="flex items-center">
+                      <img class="h-11 w-11 rounded-full" src="https://media.discordapp.net/attachments/792585239654301726/1041015343927275590/veilurpriv.gif"/>
+                      <div class="ml-1.5 text-sm leading-tight">
+                        <span class="text-white dark:text-white font-bold block ">SyneS Artz</span>
+                        <span class="text-gray-400 dark:text-gray-400 font-normal block">@synesdesign</span>
+                      </div>
+                    </div>
+                    <svg class="text-white dark:text-white h-10 inline-block fill-current" viewBox="0 0 24 24"><g><path d="M4.654 3c.461 0 .887.035 1.278.14.39.07.711.216.996.391.286.176.497.426.641.747.14.32.216.711.216 1.137 0 .496-.106.922-.356 1.242-.215.32-.566.606-.997.817.606.176 1.067.496 1.348.922.281.426.461.957.461 1.563 0 .496-.105.922-.285 1.278a2.317 2.317 0 0 1-.782.887c-.32.215-.711.39-1.137.496a5.329 5.329 0 0 1-1.278.176L0 12.803V3h4.654zm-.285 3.978c.39 0 .71-.105.957-.285.246-.18.355-.497.355-.887 0-.216-.035-.426-.105-.567a.981.981 0 0 0-.32-.355 1.84 1.84 0 0 0-.461-.176c-.176-.035-.356-.035-.567-.035H2.17v2.31c0-.005 2.2-.005 2.2-.005zm.105 4.193c.215 0 .426-.035.606-.07.176-.035.356-.106.496-.216s.25-.215.356-.39c.07-.176.14-.391.14-.641 0-.496-.14-.852-.426-1.102-.285-.215-.676-.32-1.137-.32H2.17v2.734h2.305v.005zm6.858-.035c.286.285.711.426 1.278.426.39 0 .746-.106 1.032-.286.285-.215.46-.426.53-.64h1.74c-.286.851-.712 1.457-1.278 1.848-.566.355-1.243.566-2.06.566a4.135 4.135 0 0 1-1.527-.285 2.827 2.827 0 0 1-1.137-.782 2.851 2.851 0 0 1-.712-1.172c-.175-.461-.25-.957-.25-1.528 0-.531.07-1.032.25-1.493.18-.46.426-.852.747-1.207.32-.32.711-.606 1.137-.782a4.018 4.018 0 0 1 1.493-.285c.606 0 1.137.105 1.598.355.46.25.817.532 1.102.958.285.39.496.851.641 1.348.07.496.105.996.07 1.563h-5.15c0 .58.21 1.11.496 1.396zm2.24-3.732c-.25-.25-.642-.391-1.103-.391-.32 0-.566.07-.781.176-.215.105-.356.25-.496.39a.957.957 0 0 0-.25.497c-.036.175-.07.32-.07.46h3.196c-.07-.526-.25-.882-.497-1.132zm-3.127-3.728h3.978v.957h-3.978v-.957z"></path></g></svg>
+                  </div>
+                  <p class="text-white dark:text-white block text-xl leading-snug mt-3">Valorant Thumbnail #2</p>
+                  <img class="mt-2 rounded-2xl  dark:border-gray-700" src="https://media.discordapp.net/attachments/1071864730978881586/1071864838759911424/RadiNaslDusunur.jpg?width=840&height=473"/>
+                  <p class="text-gray-500 dark:text-gray-400 text-base py-1 my-0.5">18:17 PM · Feb 14, 2023</p>
+                  <div class="border-gray-600 border border-b-0 my-1"></div>
+                  <div class="text-gray-500 dark:text-gray-400 flex mt-3">
+                    <div class="flex items-center mr-6">
+                      <svg class="fill-current h-5 w-auto" viewBox="0 0 24 24" class="r-1re7ezh r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr" style=""><g><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path></g></svg>
+                      <span class="ml-3">615</span>
+                    </div>
+                    <div class="flex items-center mr-6">
+                      <svg class="fill-current h-5 w-auto" viewBox="0 0 24 24" class="r-1re7ezh r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"><g><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path></g></svg>
+                      <span class="ml-3">93</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class=" dark:bg-black flex flex-wrap">
+                <div class="bg-gray-900 bg-opacity-20 p-4 rounded-xl max-w-md border border-opacity-10">
+                  <div class="flex justify-between">
+                    <div class="flex items-center">
+                      <img class="h-11 w-11 rounded-full" src="https://media.discordapp.net/attachments/792585239654301726/1041015343927275590/veilurpriv.gif"/>
+                      <div class="ml-1.5 text-sm leading-tight">
+                        <span class="text-white dark:text-white font-bold block ">SyneS Artz</span>
+                        <span class="text-gray-400 dark:text-gray-400 font-normal block">@synesdesign</span>
+                      </div>
+                    </div>
+                    <svg class="text-white dark:text-white h-10 inline-block fill-current" viewBox="0 0 24 24"><g><path d="M4.654 3c.461 0 .887.035 1.278.14.39.07.711.216.996.391.286.176.497.426.641.747.14.32.216.711.216 1.137 0 .496-.106.922-.356 1.242-.215.32-.566.606-.997.817.606.176 1.067.496 1.348.922.281.426.461.957.461 1.563 0 .496-.105.922-.285 1.278a2.317 2.317 0 0 1-.782.887c-.32.215-.711.39-1.137.496a5.329 5.329 0 0 1-1.278.176L0 12.803V3h4.654zm-.285 3.978c.39 0 .71-.105.957-.285.246-.18.355-.497.355-.887 0-.216-.035-.426-.105-.567a.981.981 0 0 0-.32-.355 1.84 1.84 0 0 0-.461-.176c-.176-.035-.356-.035-.567-.035H2.17v2.31c0-.005 2.2-.005 2.2-.005zm.105 4.193c.215 0 .426-.035.606-.07.176-.035.356-.106.496-.216s.25-.215.356-.39c.07-.176.14-.391.14-.641 0-.496-.14-.852-.426-1.102-.285-.215-.676-.32-1.137-.32H2.17v2.734h2.305v.005zm6.858-.035c.286.285.711.426 1.278.426.39 0 .746-.106 1.032-.286.285-.215.46-.426.53-.64h1.74c-.286.851-.712 1.457-1.278 1.848-.566.355-1.243.566-2.06.566a4.135 4.135 0 0 1-1.527-.285 2.827 2.827 0 0 1-1.137-.782 2.851 2.851 0 0 1-.712-1.172c-.175-.461-.25-.957-.25-1.528 0-.531.07-1.032.25-1.493.18-.46.426-.852.747-1.207.32-.32.711-.606 1.137-.782a4.018 4.018 0 0 1 1.493-.285c.606 0 1.137.105 1.598.355.46.25.817.532 1.102.958.285.39.496.851.641 1.348.07.496.105.996.07 1.563h-5.15c0 .58.21 1.11.496 1.396zm2.24-3.732c-.25-.25-.642-.391-1.103-.391-.32 0-.566.07-.781.176-.215.105-.356.25-.496.39a.957.957 0 0 0-.25.497c-.036.175-.07.32-.07.46h3.196c-.07-.526-.25-.882-.497-1.132zm-3.127-3.728h3.978v.957h-3.978v-.957z"></path></g></svg>
+                  </div>
+                  <p class="text-white dark:text-white block text-xl leading-snug mt-3">Valorant Thumbnail #1</p>
+                  <img class="mt-2 rounded-2xl  dark:border-gray-700" src="https://media.discordapp.net/attachments/1071864730978881586/1071864839426814105/hilegibi.jpg?width=840&height=473"/>
+                  <p class="text-gray-500 dark:text-gray-400 text-base py-1 my-0.5">18:17 PM · Feb 14, 2023</p>
+                  <div class="border-gray-600 border border-b-0 my-1"></div>
+                  <div class="text-gray-500 dark:text-gray-400 flex mt-3">
+                    <div class="flex items-center mr-6">
+                      <svg class="fill-current h-5 w-auto" viewBox="0 0 24 24" class="r-1re7ezh r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr" style=""><g><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path></g></svg>
+                      <span class="ml-3">615</span>
+                    </div>
+                    <div class="flex items-center mr-6">
+                      <svg class="fill-current h-5 w-auto" viewBox="0 0 24 24" class="r-1re7ezh r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"><g><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path></g></svg>
+                      <span class="ml-3">93</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<%- include('part/footer.ejs') %>
+</body>
+</html>
+<script>
+
+document.addEventListener('mousemove', function() {
+        document.getElementById('music').play();
+    });
+
+tippy('#discord', {
+content: "Discord",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#behance', {
+content: "Behance",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#youtube', {
+content: "Youtube",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#reddit', {
+content: "Reddit",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#socials5', {
+content: "Send Mail",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#dnd', {
+content: "Dnd On Discord",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#online', {
+content: "Online On Discord",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#idle', {
+content: "İdle On Discord",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#offline', {
+content: "Offline On Discord",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#xpnz_information', {
+content: "Other İnformations",
+placement: 'left',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+
+const texts = ['Graphic Designer', 'Front-End Developer'];
+    let synes = document.getElementById('synes');
+    let seconds = 2000;
+    let i = 0;
+    setInterval(() => {
+        if (i == texts.length) i = 0;
+        synes.innerHTML = texts[i];
+        i++;
+    }, seconds);
+
+</script>

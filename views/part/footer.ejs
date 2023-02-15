@@ -1,0 +1,21 @@
+<div class="w-52 h-full flex z-50 items-end">
+    <h1 class="text-blue-300 px-5 font-light rounded-t py-2 bg-gray-900 bg-opacity-40 text-sm"><img src="../imgs/tailwindcss.svg" width="30" class="rounded float-left mt-1 pr-2 text-xl" alt=""> TailwindCSS </h1>
+</div>
+<footer class="text-sm bg-gray-900 bg-opacity-40 shadow-xl items-center footer-social justify-between px-24 flex h-20 w-full">
+            <div id="footer-text">
+                <h4 class="font-light text-sm">© 2022 all rights reserved. Made with by <a href="<%= dcprof %>" target="_blank" class="text-blue-400">SyneS</a> using <a href="https://v2.tailwindcss.com" class="text-blue-400">TailwindCSS</a></h4>
+            </div>
+        <div id="footer-buton" class="flex">
+            <div class="mx-1"><a target="_blank" class="text-center dmca-badge hover:bg-gray-900 bg-gray-900 bg-opacity-50 py-2 font-semibold rounded px-5 text-green-500" style="text-shadow: 0vh 0vh 5vh green;">DMCA.COM</a> <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script></div>
+            <div class="mx-1"><a href="/material" class="text-center hover:bg-gray-900 bg-gray-900 bg-opacity-50 py-2 font-semibold rounded px-5 text-gray-400">MATERİAL</a></div>
+        </div>
+</footer>
+
+<script>
+    tippy('.dmca-badge', {
+content: "This site is protection by <b>dmca.com</b>.",
+placement: 'top',
+arrow: true,
+theme: 'translucent'
+});
+</script>

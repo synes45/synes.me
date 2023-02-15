@@ -1,0 +1,52 @@
+<%- include('../part/header.ejs') %>
+
+<body onkeydown="false" class="p-0 m-0 box-border bg-black text-white">
+    <div class="w-full h-full fixed flex justify-center items-center">
+        <div class="text-center px-5 -mt-24">
+            <div class="flex justify-center">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_r71cen62.json"  background="transparent"  speed="1"  style="width: 500px; height: 500px;"  loop  autoplay></lottie-player>
+            </div>
+            <div class="-mt-20">
+                <h1 class="text-3xl font-semibold text-red-500">Couldn't Find What You're Looking For!</h1>
+                <h4 class="font-light text-sm">You may have gone the wrong way on links!</h4>
+            </div>
+            <div class="flex justify-center h-28 items-end">
+               <div> <lottie-player class="relative" src="https://assets3.lottiefiles.com/private_files/lf30_torkeirh.json"  background="transparent"  speed="1"  style="top: 0.8vh; width: 30px; height: 30px;"  loop  autoplay></lottie-player></div>
+                <h4 class="text-xs font-light ">You Will Be Redirected To The Homepage In 5 Seconds.</h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+setTimeout(function(){
+  window.location = "/";
+}, 4800);
+
+    var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+    var EnableRightClick = 0;
+    if(isNS)
+    document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+    function mischandler(){
+    if(EnableRightClick==1){ return true; }
+    else {return false; }
+    }
+    function mousehandler(e){
+    if(EnableRightClick==1){ return true; }
+    var myevent = (isNS) ? e : event;
+    var eventbutton = (isNS) ? myevent.which : myevent.button;
+    if((eventbutton==2)||(eventbutton==3)) return false;
+    }
+    function keyhandler(e) {
+    var myevent = (isNS) ? e : window.event;
+    if (myevent.keyCode==96)
+    EnableRightClick = 1;
+    return;
+    }
+    document.oncontextmenu = mischandler;
+    document.onkeypress = keyhandler;
+    document.onmousedown = mousehandler;
+    document.onmouseup = mousehandler;
+</script>
+</html>

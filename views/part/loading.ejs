@@ -1,0 +1,22 @@
+<div id="WqDyZ" class="w-full h-full bg-black bg-opacity-50 fixed flex justify-center z-50 items-center" style="backdrop-filter: blur(25px);">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_2svadkl0.json"  background="transparent"  speed="2"  style="width: 150px; height: 150px;" loop  autoplay></lottie-player>
+
+</div>
+
+<script>
+    const loader = document.querySelector('#WqDyZ');
+const main = document.querySelector('#ZyDqW');
+
+function init() {
+setTimeout(() => {
+loader.style.opacity = 0;
+loader.style.visibility = 'hidden';
+
+main.style.visibility = 'visible';
+setTimeout(() => (main.style.opacity = 1), 80);
+}, 2000);
+}
+
+init();
+</script>

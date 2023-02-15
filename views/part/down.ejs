@@ -1,0 +1,26 @@
+
+
+
+
+<button onclick="topFunction()" id="downbuton" title="Yukarı Çık" class=" z-50 flex items-center h-10 justify-center w-10 shadow-xl fixed none opacity-0 border-none transition-all cursor-pointer rounded" style="bottom: 20px; right: 30px; background-color: #101725;"><ion-icon name="caret-up-outline"></ion-icon></button>
+
+<script>
+        mybutton = document.getElementById("downbuton");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+mybutton.style.visibility = "visible";
+mybutton.style.opacity = "100";
+} else {
+mybutton.style.visibility = "hidden";
+mybutton.style.opacity = "0";
+}
+}
+
+function topFunction() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+}
+</script>

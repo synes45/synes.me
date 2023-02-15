@@ -1,0 +1,311 @@
+<%- include('part/header.ejs') %>
+<%- include('part/down.ejs') %>
+<html>
+<body onkeydown="false" class="p-0 m-0 box-border bg-black text-white">
+    <%- include('part/loading.ejs') %>
+
+<div class="px-48 pt-28 bodypx">
+    <div class="pb-3 border-r-4 border-l-4 px-5 border-gray-900 border-opacity-80">
+        <div class="socialgroup">
+            <h1 class="text-2xl font-bold">raqzid</h1>
+            <h4 class="font-light text-sm text-blue-200"><ion-icon id="xpnz_information" class="text-xl relative top-1" name="create"></ion-icon> <span id="xpnz"></span></h4>
+        </div>
+        <div class="flex justify-end -mt-12 socialgroup">
+            <a href="<%= dcprof %>" id="socials" target="_blank" class="hover:bg-gray-900 hover:bg-opacity-50 activ3 rounded py-2"><ion-icon name="logo-discord" class="text-xl text-gray-400 mx-3 relative top-1"></ion-icon></a>
+            <a href="https://www.twitch.tv/polerax" target="_blank" id="socials3" class="hover:bg-gray-900 hover:bg-opacity-50 activ3 rounded py-2"><ion-icon name="logo-twitch" class="text-xl text-gray-400 mx-3 relative top-1"></ion-icon></a>
+            <a href="https://steamcommunity.com/profiles/76561199113991060" id="socials2" target="_blank" class="hover:bg-gray-900 hover:bg-opacity-50 activ3 rounded py-2"><ion-icon name="logo-steam" class="text-xl text-gray-400 mx-3 relative top-1"></ion-icon></a>
+            <a href="https://github.com/expenzx" target="_blank" id="socials4" class="hover:bg-gray-900 hover:bg-opacity-50 activ3 rounded py-2"><ion-icon name="logo-github" class="text-xl text-gray-400 mx-3 relative top-1"></ion-icon></a>
+            <a href="mailto:mailgiriniz" id="socials5" class="hover:bg-gray-900 hover:bg-opacity-50 activ3 rounded py-2"><ion-icon name="mail-open" class="text-xl text-gray-400 mx-3 relative top-1"></ion-icon></a>
+        </div>
+    </div>
+    <div class="mt-24 py-12 shadow-xl bg-gray-900 bg-opacity-40 rounded-xl px-7">
+        <div class="absolute -mt-14 -ml-10"><svg class="linear px-2 py-2 w-11 rounded-lg" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg></div>
+          <div class="float-right bodyimg pr-9">
+            <% if (status == "dnd") { %>
+                <div class="-mt-3">
+                    <img class="rounded-full shadow-xl" style="--tw-ring-offset-color: #070A10;" width="150" src="<%= avatar %>" alt="">
+                    <div class="absolute pl-28 -mt-9"><ion-icon id="dnd" style="background-color: #070A10; padding: 0.5vh;" class="text-2xl text-red-500 rounded-full" name="remove-circle-sharp"></ion-icon></div>
+                </div>
+            <% } %>
+            <% if (status == "online") { %>
+                <div class="-mt-3">
+                    <img class="rounded-full shadow-xl" style="--tw-ring-offset-color: #070A10;" width="150" src="<%= avatar %>" alt="">
+                    <div class="absolute pl-28 -mt-9"><ion-icon id="online" style="background-color: #070A10; padding: 0.5vh;" class="text-2xl text-green-700 rounded-full" name="ellipse"></ion-icon></div>
+                </div>
+            <% } %>
+            <% if (status == "idle") { %>
+                <div class="-mt-3">
+                    <img class="rounded-full shadow-xl " style="--tw-ring-offset-color: #070A10;" width="150" src="<%= avatar %>" alt="">
+                    <div class="absolute pl-28 -mt-9"><ion-icon id="idle" style="background-color: #070A10; transform: rotate(-100deg); padding: 0.5vh;" class="text-xl text-yellow-500 rounded-full" name="moon"></ion-icon></div>
+                </div>
+            <% } %>
+            <% if (status == "offline") { %>
+                <div class="-mt-3">
+                    <img class="rounded-full shadow-xl " style="--tw-ring-offset-color: #070A10;" width="150" src="<%= avatar %>" alt="">
+                    <div class="absolute pl-28 -mt-9"><ion-icon id="offline" style="background-color: #070A10; padding: 0.5vh;" class="text-2xl text-gray-500 rounded-full font-bold" name="ellipse-outline"></ion-icon></div>
+                </div>
+            <% } %>
+        </div>
+        <div class="ml-7 bodytext">
+            <h1 class="text-4xl bodytext font-extrabold">Hello, I'm raqzid,</h1>
+            <div class="absolute -mt-1"><img src="imgs/border.svg" width="85" alt="border"></div>
+            <h4 class="text-gray-400 font-light bodytext max-w-xl pt-2">Hello, I'm raqzid. I am a high school student and I have been working on site design for about 1.5 years. I love football in real life. I spend 5-6 hours a day in front of the computer, I don't like to go out much.</h4>
+        </div>
+    </div>
+    <div class="pt-32" id="tech">
+        <h1 class="text-4xl bodytext font-extrabold"><ion-icon class="text-3xl px-2 py-2 linear rounded-lg p-1 top-3 relative" name="school-outline"></ion-icon> Technologies / use</h1>
+        <h4 class="text-gray-300 font-light text-sm bodytext pt-1">You can learn the materials used <a href="/doc/material" class="text-blue-500">here</a>!</h4>
+        <div class="flex -ml-2 pt-3 techbox flex-wrap">
+            <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded">
+                <img src="./imgs/html.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">HTML</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded">
+                <img src="./imgs/css.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">CSS</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded">
+                <img src="./imgs/git.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">GİT</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded">
+                <img src="./imgs/javascript.svg" width="22" class="rounded float-left mr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">JAVASCRİPT</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded">
+                <img src="./imgs/sass.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">SASS</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/tailwindcss.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">TAİLWİNDCSS</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/bootstrap.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">BOOTSTRAP</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/nodejs.svg" width="28" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">NODE.JS</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/Octocat.png" width="35"  class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">GİTHUB</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/512px-Repl.it_logo.svg.png" width="34" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">REPL.İT</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/photoshop.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">PHOTOSHOP</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/font-awesome-seeklogo.com.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">FONT AWESOME</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/ionicframework-icon.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">İONİC</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/heroku.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">HEROKU</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/iconscout.png" width="31" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">İCONSCOUT</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/lottie.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">LOTTİE</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="./imgs/google-fonts.svg" width="30" class="rounded float-left pr-2 text-xl" alt="">
+                <span class="float-right font-medium techtext">GOOGLE FONTS</span>
+            </h3>
+        </div>
+        <div class="p-1">
+            <h3 class="flex items-center justify-between px-3 h-10 w-64 bg-gray-900 bg-opacity-40 cursor-pointer activ techbox2 py-2 hover:bg-opacity-60 font-medium rounded shadow-xl">
+                <img src="https://www.saashub.com/images/app/service_logos/155/7902ojac7nj3/large.png?1635277061" width="22" class="rounded float-left" alt="">
+                <span class="float-right font-medium techtext">HEROİCONS</span>
+            </h3>
+        </div>
+        </div>
+    </div>
+<a href="<%= dclink %>" target="_blank">
+    <div class="mt-32">
+        <div class="absolute -mt-2 -ml-2"><svg class="linear w-7 rounded p-1" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+          </svg></div>
+        <div class="flex justify-center"><div class="-mt-5 absolute px-5"><img src="imgs/effect.svg" class="" alt=""></div></div>
+        <div class="infobox bg-gray-900 bg-opacity-40 shadow-xl hover:bg-opacity-60 flex py-5 px-8 rounded-xl">
+            <div class="mr-5 infoimg">
+                <img src="<%= guilds.iconURL({dynamic:true, size:1024}) %>" class="rounded-xl border border-blue-500 border-opacity-20 p-1" width="100" alt="">
+            </div>
+            <div class="mt-6 infotext">
+                <h1 class="font-extrabold text-2xl">VISIT OUR DISCORD SERVER!</h1>
+                <h4 class="text-gray-400 font-light">Türkiye'nin en kaliteli ve ücretsiz kod paylaşım ve destek diyarına sende katıl!</h4>
+            </div>
+        </div>
+    </div>
+</a>
+    <div class="pt-36 pb-44" id="project">
+        <h1 class="text-4xl bodytext font-bold flex"><svg class="text-4xl px-2 py-2 mr-2 bg-yellow-600 linear w-11 p-1 rounded-lg" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+          </svg> Sites I've Made</h1>
+        <div class="flex probox flex-wrap pt-5">
+            <a href="https://gweepcreative.com/launcher" target="_blank">
+                <div class="absolute"><svg class="linear w-7 rounded p-1" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+                  </svg></div>
+                <div class="p-2">
+                    <div class="bg-gray-900 bg-opacity-40 shadow-xl hover:bg-opacity-60 h-64 w-80 rounded-lg">
+                        <div><img class="rounded shadow-xl" src="https://cdn.discordapp.com/attachments/909783894100959285/946714240625025084/mccr.png" width="330" alt=""></div>
+                        <div class="px-2 pt-3 text-center">
+                            <h1 class="font-extrabold text-2xl text-center">Creative Launcher</h1>
+                            <h4 class="text-sm overflow-hidden text-gray-400 font-light">Build your dream launcher with Creative Launcher!</h4>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="https://gweepcreative.com" target="_blank">
+                <div class="absolute"><svg class="linear w-7 rounded p-1" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+                  </svg></div>
+                <div class="p-2">
+                    <div class="bg-gray-900 bg-opacity-40 shadow-xl hover:bg-opacity-60 h-64 w-80 rounded-lg">
+                        <div><img class="rounded shadow-xl" src="https://cdn.discordapp.com/attachments/909783894100959285/947072902757490718/Ekran_Alnts.PNG" width="330" alt=""></div>
+                        <div class="px-2 pt-3 text-center">
+                            <h1 class="font-extrabold text-2xl text-center">gweepcreative.com</h1>
+                            <h4 class="text-sm overflow-hidden text-gray-400 font-light">Find out about Gweep Creative on this site!</h4>
+                        </div>
+                        
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+    <%- include('part/footer.ejs') %>
+</body>
+</html>
+<script>
+
+tippy('#socials', {
+content: "Discord",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#socials2', {
+content: "Steam",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#socials3', {
+content: "Twitch",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#socials4', {
+content: "Github",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#socials5', {
+content: "Send Mail",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#dnd', {
+content: "Dnd On Discord",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#online', {
+content: "Online On Discord",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#idle', {
+content: "İdle On Discord",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#offline', {
+content: "Offline On Discord",
+placement: 'top',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+tippy('#xpnz_information', {
+content: "Other İnformations",
+placement: 'left',
+arrow: true,
+animation: 'scale',
+theme: 'translucent'
+});
+
+const texts = ['FrontEnd Developer', 'OLD Photoshop Designer', 'Turkey / Anonim', 'Manager Of RabeL'];
+    let xpnz = document.getElementById('xpnz');
+    let seconds = 2000;
+    let i = 0;
+    setInterval(() => {
+        if (i == texts.length) i = 0;
+        xpnz.innerHTML = texts[i];
+        i++;
+    }, seconds);
+
+</script>
