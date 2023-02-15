@@ -1,7 +1,7 @@
 <div align="center">
-    <h1>loiren.xyz @ 2.0.0</h1>
+    <h1>synes.me @ 1.0.0</h1>
     <h5>Developed with 💙 by <a href="https://synes.me">SyneS</a></h5>
-    <img src="width=1369&height=676]https://cdn.discordapp.com/attachments/842862067253116938/1075500906847666258/image.png">
+    <img src="https://cdn.discordapp.com/attachments/842862067253116938/1075500906847666258/image.png">
 </div>
 
 # ⚙️ Config
