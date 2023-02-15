@@ -34,7 +34,7 @@ app.get("/material", (req, res) =>
       "material.ejs",
    {
     dcprof:prof,
-    avatar: client.users.cache.get("842858705468260393").avatarURL({dynamic:true})
+    avatar: client.users.cache.get("DISCORD PROFILE ID").avatarURL({dynamic:true})
   })
   
 );
@@ -48,7 +48,7 @@ app.get("/eski", (req, res) =>
     guilds:client.guilds.cache.get(guild),
     dclink:link,
     dcprof:prof,
-    avatar: client.users.cache.get("842858705468260393").avatarURL({dynamic:true}),
+    avatar: client.users.cache.get("DISCORD PROFILE ID").avatarURL({dynamic:true}),
    
     status:client.guilds.cache.get(guild).members.cache.get("842858705468260393").presence?.status
   })
@@ -60,7 +60,7 @@ app.get("/error", (req, res) =>
   res.render(
       "datascript/error.ejs",
    {
-    avatar: client.users.cache.get("842858705468260393").avatarURL({dynamic:true})
+    avatar: client.users.cache.get("DISCORD PROFILE ID").avatarURL({dynamic:true})
   })
   
 );
@@ -74,7 +74,7 @@ app.get("/", (req, res) =>
     guilds:client.guilds.cache.get(guild),
     dclink:link,
     dcprof:prof,
-    avatar: client.users.cache.get("842858705468260393").avatarURL({dynamic:true}),
+    avatar: client.users.cache.get("DISCORD PROFILE ID").avatarURL({dynamic:true}),
    
     status:client.guilds.cache.get(guild).members.cache.get("842858705468260393").presence?.status
   })
